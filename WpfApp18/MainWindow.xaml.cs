@@ -181,7 +181,7 @@ namespace WpfApp18
                     Notify("E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo");
 
                     // 콤보박스 아이템 변경시 컬러 표시하기
-                    m_E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo_colorchange();
+                    ColorFlag();
                 }
             }
         }
@@ -198,7 +198,7 @@ namespace WpfApp18
                     Notify("E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo");
 
                     // 콤보박스 아이템 변경시 컬러 표시하기
-                    m_E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo_colorchange();
+                    ColorFlag();
                 }
             }
         }
@@ -215,198 +215,24 @@ namespace WpfApp18
                     Notify("E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo");
 
                     // 콤보박스 아이템 변경시 컬러 표시하기
-                    m_E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo_colorchange();
+                    ColorFlag();
                 }
             }
         }
         #endregion
 
-        public void m_E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo_colorchange()
+        public void ColorFlag()
         {
             foreach (var item in Custlist)
             {
-                item.ColorChange_ACDMCR_CMMN_CODE_SE = "0";
+                item.ColorFlag = false;
             }
-
-            if (E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo == E_ACDMCR_CMMN_CODE_SE.전체)
-            {
-                foreach (var item in Custlist)
-                {
-                    item.ColorChange_ACDMCR_CMMN_CODE_SE = "1";
-                }
-            }
-
-            else if (E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo == E_ACDMCR_CMMN_CODE_SE.전문대학)
-            {
-                foreach (var item in Custlist)
-                {
-                    if (item.ACDMCR_NM == "전문대학")
-                    {
-                        item.ColorChange_ACDMCR_CMMN_CODE_SE = "1";
-                    }
-                }
-            }
-            else if (E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo == E_ACDMCR_CMMN_CODE_SE.중학교)
-            {
-                foreach (var item in Custlist)
-                {
-                    if (item.ACDMCR_NM == "중학교")
-                    {
-                        item.ColorChange_ACDMCR_CMMN_CODE_SE = "1";
-                    }
-                }
-            }
-            else if (E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo == E_ACDMCR_CMMN_CODE_SE.고등학교)
-            {
-                foreach (var item in Custlist)
-                {
-                    if (item.ACDMCR_NM == "고등학교")
-                    {
-                        item.ColorChange_ACDMCR_CMMN_CODE_SE = "1";
-                    }
-                }
-            }
-            else if (E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo == E_ACDMCR_CMMN_CODE_SE.초등학교)
-            {
-                foreach (var item in Custlist)
-                {
-                    if (item.ACDMCR_NM == "초등학교")
-                    {
-                        item.ColorChange_ACDMCR_CMMN_CODE_SE = "1";
-                    }
-                }
-            }
-            else if (E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo == E_ACDMCR_CMMN_CODE_SE.대학교)
-            {
-                foreach (var item in Custlist)
-                {
-                    if (item.ACDMCR_NM == "대학교")
-                    {
-                        item.ColorChange_ACDMCR_CMMN_CODE_SE = "1";
-                    }
-                }
-            }
-            else if (E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo == E_ACDMCR_CMMN_CODE_SE.관계없음)
-            {
-                foreach (var item in Custlist)
-                {
-                    if (item.ACDMCR_NM == "관계없음")
-                    {
-                        item.ColorChange_ACDMCR_CMMN_CODE_SE = "1";
-                    }
-                }
-            }
-            else if (E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo == E_ACDMCR_CMMN_CODE_SE.박사과정)
-            {
-                foreach (var item in Custlist)
-                {
-                    if (item.ACDMCR_NM == "박사과정")
-                    {
-                        item.ColorChange_ACDMCR_CMMN_CODE_SE = "1";
-                    }
-                }
-            }
-        }
-
-        public void m_E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo_colorchange()
-        {
 
             foreach (var item in Custlist)
             {
-                item.ColorChange_EMPLYM_STLE_CMMN_CODE_SE = "0";
-            }
-
-            if (E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo == E_EMPLYM_STLE_CMMN_CODE_SE.전체)
-            {
-                foreach (var item in Custlist)
+                if((item.ACDMCR_NM == E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo.ToString() || E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo == E_ACDMCR_CMMN_CODE_SE.전체) && (item.EMPLYM_STLE_CMMN_MM == E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo.ToString() || E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo == E_EMPLYM_STLE_CMMN_CODE_SE.전체) && (item.CAREER_CND_NM == E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo.ToString() || E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo == E_CAREER_CND_CMMN_CODE_SE.전체))
                 {
-                    item.ColorChange_EMPLYM_STLE_CMMN_CODE_SE = "1";
-                }
-            }
-            else if (E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo == E_EMPLYM_STLE_CMMN_CODE_SE.계약직)
-            {
-                foreach (var item in Custlist)
-                {
-                    if (item.EMPLYM_STLE_CMMN_MM == "계약직")
-                    {
-                        item.ColorChange_EMPLYM_STLE_CMMN_CODE_SE = "1";
-                    }
-                }
-            }
-            else if (E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo == E_EMPLYM_STLE_CMMN_CODE_SE.상용직시간제)
-            {
-                foreach (var item in Custlist)
-                {
-                    if (item.EMPLYM_STLE_CMMN_MM == "상용직(시간제)")
-                    {
-                        item.ColorChange_EMPLYM_STLE_CMMN_CODE_SE = "1";
-                    }
-                }
-            }
-            else if (E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo == E_EMPLYM_STLE_CMMN_CODE_SE.상용직)
-            {
-                foreach (var item in Custlist)
-                {
-                    if (item.EMPLYM_STLE_CMMN_MM == "상용직")
-                    {
-                        item.ColorChange_EMPLYM_STLE_CMMN_CODE_SE = "1";
-                    }
-                }
-            }
-            else if (E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo == E_EMPLYM_STLE_CMMN_CODE_SE.계약직시간제)
-            {
-                foreach (var item in Custlist)
-                {
-                    if (item.EMPLYM_STLE_CMMN_MM == "계약직(시간제)")
-                    {
-                        item.ColorChange_EMPLYM_STLE_CMMN_CODE_SE = "1";
-                    }
-                }
-            }
-        }
-
-        public void m_E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo_colorchange()
-        {
-            foreach (var item in Custlist)
-            {
-                item.ColorChange_CAREER_CND_CMMN_CODE_SE = "0";
-            }
-
-            if (E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo == E_CAREER_CND_CMMN_CODE_SE.전체)
-            {
-                foreach (var item in Custlist)
-                {
-                    item.ColorChange_CAREER_CND_CMMN_CODE_SE = "1";
-                }
-            }
-            else if (E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo == E_CAREER_CND_CMMN_CODE_SE.신입)
-            {
-                foreach (var item in Custlist)
-                {
-                    if (item.CAREER_CND_NM == "신입")
-                    {
-                        item.ColorChange_CAREER_CND_CMMN_CODE_SE = "1";
-                    }
-                }
-            }
-            else if (E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo == E_CAREER_CND_CMMN_CODE_SE.경력)
-            {
-                foreach (var item in Custlist)
-                {
-                    if (item.CAREER_CND_NM == "경력")
-                    {
-                        item.ColorChange_CAREER_CND_CMMN_CODE_SE = "1";
-                    }
-                }
-            }
-            else if (E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo == E_CAREER_CND_CMMN_CODE_SE.무관)
-            {
-                foreach (var item in Custlist)
-                {
-                    if (item.CAREER_CND_NM == "무관")
-                    {
-                        item.ColorChange_CAREER_CND_CMMN_CODE_SE = "1";
-                    }
+                    item.ColorFlag = true;
                 }
             }
         }
@@ -605,12 +431,7 @@ namespace WpfApp18
             OxReadXML();
 
             //클릭 했을시 컬러 변경하기
-
-            #region Clikc colorchange
-            m_E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo_colorchange();
-            m_E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo_colorchange();
-            m_E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo_colorchange();
-            #endregion
+            ColorFlag();
         }
         #endregion
 

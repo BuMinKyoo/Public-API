@@ -43,14 +43,12 @@
             <ListView.Resources>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Style.Triggers>
-                        <MultiDataTrigger>
-                            <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding ColorChange_ACDMCR_CMMN_CODE_SE}" Value="1"/>
-                                <Condition Binding="{Binding ColorChange_EMPLYM_STLE_CMMN_CODE_SE}" Value="1"/>
-                                <Condition Binding="{Binding ColorChange_CAREER_CND_CMMN_CODE_SE}" Value="1"/>
-                            </MultiDataTrigger.Conditions>
+                            <DataTrigger Binding="{Binding ColorFlag}" Value="true">
                             <Setter Property="Background" Value="#d2ccd8"/>
-                        </MultiDataTrigger>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ColorFlag}" Value="false">
+                            <Setter Property="Background" Value="White"/>
+                        </DataTrigger>
                     </Style.Triggers>
                 </Style>
             </ListView.Resources>

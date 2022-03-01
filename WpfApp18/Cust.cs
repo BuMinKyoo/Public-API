@@ -88,49 +88,24 @@ namespace WpfApp18
             
         }
 
-        private string m_ColorChange_ACDMCR_CMMN_CODE_SE;
-        public string ColorChange_ACDMCR_CMMN_CODE_SE
-        {
-            get { return m_ColorChange_ACDMCR_CMMN_CODE_SE; }
-            set
-            {
-                if (m_ColorChange_ACDMCR_CMMN_CODE_SE != value)
-                {
-                    m_ColorChange_ACDMCR_CMMN_CODE_SE = value;
-                    Notify("ColorChange_ACDMCR_CMMN_CODE_SE");
-                }
-            }
-        }
-
-        private string m_ColorChange_EMPLYM_STLE_CMMN_CODE_SE;
-        public string ColorChange_EMPLYM_STLE_CMMN_CODE_SE
-        {
-            get { return m_ColorChange_EMPLYM_STLE_CMMN_CODE_SE; }
-            set
-            {
-                if (m_ColorChange_EMPLYM_STLE_CMMN_CODE_SE != value)
-                {
-                    m_ColorChange_EMPLYM_STLE_CMMN_CODE_SE = value;
-                    Notify("ColorChange_EMPLYM_STLE_CMMN_CODE_SE");
-                }
-            }
-        }
-
-        private string m_ColorChange_CAREER_CND_CMMN_CODE_SE;
-        public string ColorChange_CAREER_CND_CMMN_CODE_SE
-        {
-            get { return m_ColorChange_CAREER_CND_CMMN_CODE_SE; }
-            set
-            {
-                if (m_ColorChange_CAREER_CND_CMMN_CODE_SE != value)
-                {
-                    m_ColorChange_CAREER_CND_CMMN_CODE_SE = value;
-                    Notify("ColorChange_CAREER_CND_CMMN_CODE_SE");
-                }
-            }
-        }
-
         
+
+        private bool m_ColorFlag;
+        public bool ColorFlag
+        {
+            get { return m_ColorFlag; }
+            set
+            {
+                if (m_ColorFlag != value)
+                {
+                    m_ColorFlag = value;
+                    Notify("ColorFlag");
+                }
+            }
+
+        }
+
+
 
         private string m_ACDMCR_NM; //학력
         public string ACDMCR_NM
