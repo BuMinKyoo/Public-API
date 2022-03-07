@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -228,12 +229,21 @@ namespace WpfApp18
                 item.ColorFlag = false;
             }
 
-            foreach (var item in Custlist)
+            #region for문
+            //foreach (var item in Custlist)
+            //{
+            //    if((item.ACDMCR_NM == E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo.ToString() || E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo == E_ACDMCR_CMMN_CODE_SE.전체) && (item.EMPLYM_STLE_CMMN_MM == E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo.ToString() || E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo == E_EMPLYM_STLE_CMMN_CODE_SE.전체) && (item.CAREER_CND_NM == E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo.ToString() || E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo == E_CAREER_CND_CMMN_CODE_SE.전체))
+            //    {
+            //        item.ColorFlag = true;
+            //    }
+            //}
+            #endregion
+
+            var findItem = Custlist.Where(m => (m.ACDMCR_NM == E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo.ToString() || E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo == E_ACDMCR_CMMN_CODE_SE.전체) && (m.EMPLYM_STLE_CMMN_MM == E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo.ToString() || E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo == E_EMPLYM_STLE_CMMN_CODE_SE.전체) && (m.CAREER_CND_NM == E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo.ToString() || E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo == E_CAREER_CND_CMMN_CODE_SE.전체)).ToList();
+
+            foreach (var item in findItem)
             {
-                if((item.ACDMCR_NM == E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo.ToString() || E_ACDMCR_CMMN_CODE_SE_selectedItem_Myinfo == E_ACDMCR_CMMN_CODE_SE.전체) && (item.EMPLYM_STLE_CMMN_MM == E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo.ToString() || E_EMPLYM_STLE_CMMN_CODE_SE_selectedItem_Myinfo == E_EMPLYM_STLE_CMMN_CODE_SE.전체) && (item.CAREER_CND_NM == E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo.ToString() || E_CAREER_CND_CMMN_CODE_SE_selectedItem_Myinfo == E_CAREER_CND_CMMN_CODE_SE.전체))
-                {
-                    item.ColorFlag = true;
-                }
+                item.ColorFlag = true;
             }
         }
 
