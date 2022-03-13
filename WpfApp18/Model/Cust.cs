@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using WpfApp18;
 
-namespace WpfApp18
+namespace Model.WpfApp18
 {
     public class Cust : INotifyPropertyChanged
     {

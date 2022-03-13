@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfApp18;
 
-namespace WpfApp18
+namespace ComboBox_Enum.WpfApp18
 {
     public enum E_ACDMCR_CMMN_CODE_SE
     {

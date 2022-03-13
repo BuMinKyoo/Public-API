@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 namespace WpfApp18
 {
     /// <summary>
@@ -23,6 +22,7 @@ namespace WpfApp18
         public UserControl_MyInfo()
         {
             InitializeComponent();
+            this.DataContext = Workspace.Instance.Usercontrol_myinfo_viewmodel;
         }
     }
 }

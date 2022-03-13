@@ -23,6 +23,7 @@ namespace WpfApp18
         public UserControl_Home()
         {
             InitializeComponent();
+            this.DataContext = Workspace.Instance.Usercontrol_home_viewmodel;
         }
     }
 }

@@ -23,6 +23,7 @@ namespace WpfApp18
         public UserControl_Recruit()
         {
             InitializeComponent();
+            this.DataContext = Workspace.Instance.Usercontrol_recruit_viewmodel;
         }
     }
 }

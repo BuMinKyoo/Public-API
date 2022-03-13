@@ -1,24 +1,27 @@
 ﻿using System;
 using System.Windows.Input;
 
-public class Command : ICommand
+namespace WpfApp18
 {
-    Action<object> _execute;
-
-    public event EventHandler? CanExecuteChanged;
-
-    public Command(Action<object> execute)
+    public class Command : ICommand
     {
-        _execute = execute;
-    }
+        Action<object> _execute;
 
-    public bool CanExecute(object? parameter)
-    {
-        return true;
-    }
+        public event EventHandler? CanExecuteChanged;
 
-    public void Execute(object? parameter)
-    {
-        _execute(parameter);
+        public Command(Action<object> execute)
+        {
+            _execute = execute;
+        }
+
+        public bool CanExecute(object? parameter)
+        {
+            return true;
+        }
+
+        public void Execute(object? parameter)
+        {
+            _execute(parameter);
+        }
     }
 }
